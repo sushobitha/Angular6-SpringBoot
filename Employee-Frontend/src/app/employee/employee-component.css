@@ -1,0 +1,21 @@
+mat-table {
+  min-width: 80%;
+}
+p{
+  font-weight: bold;
+}
+
+mat-row:nth-child(odd){
+  background-color:aliceblue;
+}
+
+
+mat-header-row{
+  background-color:lavender;
+  font-weight: bold;
+  font-size: 14px;
+}
+mat-header-cell{
+  font-weight: bold;
+  font-size: 16px;
+}
