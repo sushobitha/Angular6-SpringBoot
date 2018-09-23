@@ -1,0 +1,14 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16%;
+}
+
+.register-container > * {
+  margin-left: 25%;
+  width: 40%;
+}
+
+.errmsg{
+  color: red;
+}

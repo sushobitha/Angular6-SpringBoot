@@ -1,8 +1,5 @@
 package com.employee.test.controller;
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -12,10 +9,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -42,7 +36,7 @@ public class EmployeeControllerTest {
 	String exampleEmployeeJson = "[{\"empId\":1,\"firstName\":\"John\",\"lastName\":\"Doe\",\"gender\":\"M\",\"dob\":\"10-10-1993\",\"department\":\"HR\"}]";
 
 	@Test
-	public void retrieveDetailsForCourse() throws Exception {
+	public void retrieveEmployeeDetails() throws Exception {
 		mockEmployee = new ArrayList<>();
 		mockEmployee.add(employee);
 		Mockito.when(employeeService.getAllEmployees()).thenReturn(mockEmployee);

@@ -1,0 +1,67 @@
+<div class="register-container">
+  <h2 style="margin-left: 21%">Employee Registration Form</h2>
+  <div class="row">
+    <div class="col-md-7 offset-md-3">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <span style="font-size: 11px" [hidden]="!registerForm.invalid" class="text-info">Fields marked with <b style="color:red; font-size: 14px">*</b> are mandatory</span> 
+
+        <!-- first name -->
+        <div class="form-group">
+          <label>First Name <b style="color:red">*</b></label>
+          <input type="text" autofocus formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <span [hidden]="((registerForm.controls.firstName.value.length >= 3 && registerForm.controls.firstName.value.length <= 25) || registerForm.controls.firstName.value.length==0)" class="text-danger">First Name should be of 3-25 characters</span>
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div class="errmsg" *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+        </div>
+
+        <!-- last name -->
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" required/>
+          <span [hidden]="((registerForm.controls.lastName.value.length >= 3 && registerForm.controls.lastName.value.length <= 25) )|| (registerForm.controls.lastName.value.length==0)" class="text-danger">Last Name should be of 3-25 characters</span>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+          <div><label>Gender <b style="color:red">*</b>&nbsp;
+          <input type="radio" name="gender" value='Male' formControlName="gender" [(ngModel)]='gender'>Male
+          <input type="radio" name='gender' value='Female' formControlName="gender" [(ngModel)]='gender'>Female</label>
+        </div>
+        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+          <div *ngIf="f.gender.errors.required">Gender is required</div>
+        </div> 
+        </div> 
+
+        <!-- DOB -->
+        <div class="form-group">
+          <label>Date of Birth <b style="color:red">*</b></label>
+          <input type="date" (change)="validateDOB(dob)" formControlName="dob" class="form-control" [(ngModel)]="dob"/>
+          <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+              <div *ngIf="f.dob.errors.required">Dob is required</div>
+              </div>
+          <span [hidden]="!dobErrMsg" class="text-danger">Enter a valid date, should not exceed 100 years</span>
+        </div>
+
+        <!-- Department -->
+        <div class="form-group">
+          <label>Department <b style="color:red">*</b></label>
+          <input type="text" formControlName="department" class="form-control" required [ngClass]="{ 'is-invalid': submitted && f.department.errors }" />
+    
+          <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+          <div *ngIf="f.department.errors.required">Department is required</div>
+        </div>
+        </div>
+
+        <!-- Register Button -->
+        <div class="form-group">
+          <button [disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row text-success" *ngIf="emp">Employee added successfully with Emp Id: {{emp.empId}}</div>
+
+
+</div>
+

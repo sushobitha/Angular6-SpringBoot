@@ -33,7 +33,7 @@ public class EmployeeController {
     public List<EmployeeDTO> getEmployees() throws Exception {
         List<EmployeeDTO> list = new ArrayList<>();
         List<Employee> dbEmployees = employeeService.getAllEmployees();
-        System.out.println(String.valueOf(dbEmployees.size()));
+        //System.out.println(String.valueOf(dbEmployees.size()));
         for(Employee emp : dbEmployees) {
         	EmployeeDTO employeeDTO = new EmployeeDTO();
         	employeeDTO.setEmpId(emp.getEmployeeId());

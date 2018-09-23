@@ -32,21 +32,12 @@ export class EmployeeComponent implements OnInit {
     this.employeeService.getEmployeeDetails()
       .subscribe(
       (result) => {
-        this.employees = result;
-        this.tableData = this.employees; // Table data binding the bootstrap table
-        if (this.tableData.length > 0) {
-          this.tableColNameGenerated = this.getKeys(this.tableData[0]);
-        }
+        this.employees = result; // Table data binding the bootstrap table
         this.dataSource = new MatTableDataSource(this.employees); // Table data binding the angular material
         this.dataSource.paginator = this.paginator;
-
       }
     );
 
-  }
-  // Get keys, To get the data of corresponding column
-  private getKeys(value: any): Array<String> {
-    return Object.keys(value);
   }
 
 }

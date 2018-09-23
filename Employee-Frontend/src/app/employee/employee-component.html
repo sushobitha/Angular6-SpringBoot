@@ -1,5 +1,8 @@
-
-<div class="container">
+<div  *ngIf="employees && employees.length==0" style="text-align: center">
+<h3>Sorry! there are no Employees</h3>
+<h4>Proceed to 'Register' tab to add new employees. Thank you! :)</h4>
+</div>
+<div *ngIf="employees" class="container">
   <h2>Employee Details</h2>
   <p>The below table describes employee basic details USING ANGULAR MATERIAL TABLE:</p>
 
@@ -56,8 +59,13 @@
     </thead>
     <tbody>
 
-    <tr *ngFor="let data of tableData">
-      <td class="text-center" *ngFor="let colName of tableColNameGenerated"> {{data[colName]}}</td>
+    <tr *ngFor="let data of employees">
+      <td class="text-center"> {{data.firstName}}</td>
+      <td class="text-center"> {{data.lastName}}</td>
+      <td class="text-center"> {{data.gender}}</td>
+      <td class="text-center"> {{data.dob}}</td>
+      <td class="text-center"> {{data.department}}</td>
+
     </tr>
     </tbody>
   </table>
