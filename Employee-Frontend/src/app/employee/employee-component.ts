@@ -6,6 +6,7 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 // RxJs required methods
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee-component.html',
@@ -19,7 +20,7 @@ export class EmployeeComponent implements OnInit {
   employees: any;
   tableData: any;
   tableColNameGenerated: Array<String> = new Array<String>();
-  constructor(private employeeService: EmployeeService) {} // Dependency injection of service module
+  constructor(private employeeService: EmployeeService, private router: Router) {} // Dependency injection of service module
 
   ngOnInit() {
     this.tableData = [];
@@ -38,6 +39,10 @@ export class EmployeeComponent implements OnInit {
       }
     );
 
+  }
+
+  route() {
+    this.router.navigate(['/register']);
   }
 
 }

@@ -1,8 +1,8 @@
 <div  *ngIf="employees && employees.length==0" style="text-align: center">
 <h3>Sorry! there are no Employees</h3>
-<h4>Proceed to 'Register' tab to add new employees. Thank you! :)</h4>
+  <h4>Proceed to <a class="nav-link" (click)="route()">'Register'</a> tab to add new employees. Thank you! :)</h4>
 </div>
-<div *ngIf="employees" class="container">
+<div *ngIf="employees && employees.length>0" class="container">
   <h2>Employee Details</h2>
   <p>The below table describes employee basic details USING ANGULAR MATERIAL TABLE:</p>
 
@@ -11,6 +11,7 @@
 
     <!-- first name Column -->
     <ng-container matColumnDef="First Name">
+
       <mat-header-cell *matHeaderCellDef> First Name</mat-header-cell>
       <mat-cell *matCellDef="let emp"> {{emp.firstName}}</mat-cell>
     </ng-container>

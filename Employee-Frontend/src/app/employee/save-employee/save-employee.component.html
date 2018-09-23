@@ -17,9 +17,9 @@
 
         <!-- last name -->
         <div class="form-group">
-          <label>Last Name</label>
+          <label>Last Name <b style="color:red">*</b></label>
           <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" required/>
-          <span [hidden]="((registerForm.controls.lastName.value.length >= 3 && registerForm.controls.lastName.value.length <= 25) )|| (registerForm.controls.lastName.value.length==0)" class="text-danger">Last Name should be of 3-25 characters</span>
+          <span [hidden]="((registerForm.controls.lastName.value.length >= 1 && registerForm.controls.lastName.value.length <= 25) )|| (registerForm.controls.lastName.value.length==0)" class="text-danger">Last Name should be of 1-25 characters</span>
         </div>
 
         <!-- Gender -->
