@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {EmployeeService} from './EmployeeService/employee-service';
 import {Employee} from './employee-interface';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 // RxJs required methods
 import 'rxjs/add/operator/map';
@@ -14,12 +14,12 @@ import {Router} from '@angular/router';
 })
 export class EmployeeComponent implements OnInit {
 
-  displayedColumns: string[] = ['First Name', 'Last Name', 'Gender', 'Dob', 'Department'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'gender', 'dob', 'department'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<Employee>;
   employees: any;
   tableData: any;
-  tableColNameGenerated: Array<String> = new Array<String>();
   constructor(private employeeService: EmployeeService, private router: Router) {} // Dependency injection of service module
 
   ngOnInit() {
@@ -35,7 +35,10 @@ export class EmployeeComponent implements OnInit {
       (result) => {
         this.employees = result; // Table data binding the bootstrap table
         this.dataSource = new MatTableDataSource(this.employees); // Table data binding the angular material
-        this.dataSource.paginator = this.paginator;
+        setTimeout(() => {
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+        }, 10);
       }
     );
 

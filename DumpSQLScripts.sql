@@ -1,3 +1,53 @@
+
+DROP TABLE IF EXISTS employee;
+
+
+
+CREATE TABLE employee (
+  
+empid bigint(20) NOT NULL AUTO_INCREMENT,
+  
+firstname varchar(25) DEFAULT NULL,
+  
+lastname varchar(25) DEFAULT NULL,
+  
+gender varchar(25) DEFAULT NULL,
+  
+dob varchar(25) DEFAULT NULL,
+ 
+department varchar(25) DEFAULT NULL,
+  
+PRIMARY KEY (empid)
+);
+
+
+
+BEGIN;
+
+INSERT INTO employee VALUES (4,"Ronald", "Allen", "Male","26-111984","DXEMP");
+
+INSERT INTO employee VALUES (5,"Marie", "Jones", "Female","17-01-1983","INSADM");
+
+INSERT INTO employee VALUES (6,"Nike", "Josef", "Male","19-10-1984","DXANS");
+
+INSERT INTO employee VALUES (7,"Michel", "Jackson", "Male","01-02-1983","INSADM");
+
+INSERT INTO employee VALUES (8,"Rossie", "Eran", "Female","02-02-1983","ADM");
+
+INSERT INTO employee VALUES (9,"Eagal", "Menon", "Female","12-11-1984","DX");
+
+INSERT INTO employee VALUES (10,"Swager", "merr", "Male","30-12-1984","FSADM");
+
+INSERT INTO employee VALUES (11,"Ronald", "Jackline", "Male","10-04-1984","MFGADM");
+
+
+COMMIT;
+
+SELECT * FROM employee;
+
+
+
+
 CREATE DATABASE  IF NOT EXISTS `employeedb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
 USE `employeedb`;
 -- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)

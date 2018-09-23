@@ -7,36 +7,36 @@
   <p>The below table describes employee basic details USING ANGULAR MATERIAL TABLE:</p>
 
 <div class="mat-elevation-z8">
-  <mat-table style="text-align: center" #table [dataSource]="dataSource">
+  <mat-table style="text-align: center" #table [dataSource]="dataSource" matSort>
 
     <!-- first name Column -->
-    <ng-container matColumnDef="First Name">
+    <ng-container matColumnDef="firstName">
 
-      <mat-header-cell *matHeaderCellDef> First Name</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> First Name</mat-header-cell>
       <mat-cell *matCellDef="let emp"> {{emp.firstName}}</mat-cell>
     </ng-container>
 
     <!-- last name Column -->
-    <ng-container matColumnDef="Last Name">
-      <mat-header-cell *matHeaderCellDef> Last Name</mat-header-cell>
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name</mat-header-cell>
       <mat-cell *matCellDef="let emp"> {{emp.lastName}}</mat-cell>
     </ng-container>
 
     <!-- gender Column -->
-    <ng-container matColumnDef="Gender">
-      <mat-header-cell *matHeaderCellDef> Gender</mat-header-cell>
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Gender</mat-header-cell>
       <mat-cell *matCellDef="let emp"> {{emp.gender}}</mat-cell>
     </ng-container>
 
     <!-- dob Column -->
-    <ng-container matColumnDef="Dob">
-      <mat-header-cell *matHeaderCellDef> Dob</mat-header-cell>
+    <ng-container matColumnDef="dob">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Dob</mat-header-cell>
       <mat-cell *matCellDef="let emp"> {{emp.dob}}</mat-cell>
     </ng-container>
 
     <!-- department Column -->
-    <ng-container matColumnDef="Department">
-      <mat-header-cell *matHeaderCellDef> Department</mat-header-cell>
+    <ng-container matColumnDef="department">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Department</mat-header-cell>
       <mat-cell *matCellDef="let emp"> {{emp.department}}</mat-cell>
     </ng-container>
 
