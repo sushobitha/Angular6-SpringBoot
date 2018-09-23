@@ -18,8 +18,8 @@ Department
 
 #Technology/ Framework used:
 
-*Front End: Angular 6, Bootstrap, Typescript, Jasmine, Karma
-*Back End: Java, Spring Boot, Rest API, Swagger, Junit, Mockito 
+* Front End: Angular 6, Bootstrap, Typescript, Jasmine, Karma
+* Back End: Java, Spring Boot, Rest API, Swagger, Junit, Mockito 
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
