@@ -1,5 +1,5 @@
 # Angular6-SpringBoot
-An Application developed using Spring boot as backend and Angular 6 as a front end framework to display the employee details
+An Application developed using Spring boot as backend and Angular 6 as a front end framework to register employee and display all registered employee details
 
 -----------------------------------------------------------------------------------------------------------------------------
 #Use Case Name:  Employee Registration
@@ -18,8 +18,8 @@ Department
 
 #Technology/ Framework used:
 
-Front End: Angular 6, Bootstrap, Typescript, Jasmine, Karma
-Back End: Java, Spring Boot, Rest API, Swagger, Junit, Mockito 
+* Front End: Angular 6, Bootstrap, Typescript, Jasmine, Karma
+* Back End: Java, Spring Boot, Rest API, Swagger, Junit, Mockito 
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
