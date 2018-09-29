@@ -1,5 +1,5 @@
 # Angular6-SpringBoot
-An Application developed using Spring boot as backend and Angular 6 as a front end framework to register employee and display all registered employee details
+An Application developed using Spring boot as backend and Angular 6 as a front end framework to register employee and display all registered employee details. Employees can also be deleted.
 
 -----------------------------------------------------------------------------------------------------------------------------
 #Use Case Name:  Employee Registration
@@ -14,6 +14,7 @@ Gender
 Date of Birth
 Department
 
+Employees can be deleted.
 --------------------------------------------------------------------------------------------------------------------------------
 
 #Technology/ Framework used:
