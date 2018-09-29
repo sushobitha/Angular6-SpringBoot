@@ -2,6 +2,7 @@ package com.employee.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -69,5 +71,17 @@ public class EmployeeController {
     	
 		return new ResponseEntity<>(empDTO, HttpStatus.OK);
 	}
+    
+    @RequestMapping(value = "/deleteEmployee/{id}", method = RequestMethod.DELETE)
+    public String deleteEmployee(@PathVariable("id") Long employeeId) throws Exception {
+    	Optional<Employee> emp = employeeService.findById(employeeId);
+        if (emp == null) {
+            return "Sorry, Employee not found!";
+        }
+        else{ 
+    	employeeService.deleteEmployee(employeeId); 
+    	return "Employee deleted!";
+        }
+    }
 }
  

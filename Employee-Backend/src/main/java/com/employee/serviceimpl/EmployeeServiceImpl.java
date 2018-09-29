@@ -2,10 +2,12 @@ package com.employee.serviceimpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.employee.dto.EmployeeDTO;
 import com.employee.model.Employee;
 import com.employee.repository.EmployeeRepository;
 import com.employee.service.EmployeeService;
@@ -33,6 +35,19 @@ public class EmployeeServiceImpl implements EmployeeService{
 		Employee savedEmployee = employeeRepository.saveAndFlush(employee);
 		return savedEmployee;
 	}
+
+	@Override
+	public void deleteEmployee(Long employeeId) throws Exception {
+		employeeRepository.deleteById(employeeId);
+		
+	}
+
+	@Override
+	public Optional<Employee> findById(long employeeId) throws Exception {
+			Optional<Employee> emp = employeeRepository.findById(employeeId);
+		return emp;
+	}
+
 	
 	
 }

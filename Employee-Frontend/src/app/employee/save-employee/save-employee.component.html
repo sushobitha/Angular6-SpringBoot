@@ -8,7 +8,8 @@
         <!-- first name -->
         <div class="form-group">
           <label>First Name <b style="color:red">*</b></label>
-          <input type="text" autofocus formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <input type="text" autofocus
+           formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
           <span [hidden]="((registerForm.controls.firstName.value.length >= 3 && registerForm.controls.firstName.value.length <= 25) || registerForm.controls.firstName.value.length==0)" class="text-danger">First Name should be of 3-25 characters</span>
           <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
           <div class="errmsg" *ngIf="f.firstName.errors.required">First Name is required</div>

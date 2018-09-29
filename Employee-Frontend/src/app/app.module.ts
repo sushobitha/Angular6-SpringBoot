@@ -14,21 +14,27 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule, MatPaginatorModule, MatSelectModule
+  MatTableModule, MatPaginatorModule, MatSelectModule, MatSortModule
 } from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EmployeeComponent } from './employee/employee-component';
 import { EmployeeService } from './employee/EmployeeService/employee-service';
 import { SaveEmployeeComponent } from './employee/save-employee/save-employee.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {appRoutes} from './router';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { MessagesService } from './shared/messages-service/messages.service';
+import { MessagesComponent } from './shared/messages-service/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     SaveEmployeeComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    DialogComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,12 +50,15 @@ import {appRoutes} from './router';
     FlexLayoutModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSortModule,
     HttpClientModule,
-    MatSelectModule,
+    MatDialogModule,
     RouterModule.forRoot(
       appRoutes)
   ],
-  providers: [EmployeeService],
-  bootstrap: [AppComponent]
+  providers: [EmployeeService, MessagesService],
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent,MessagesComponent]
 })
 export class AppModule { }
+ 
