@@ -6,7 +6,7 @@ An Application developed using Spring boot as backend and Angular 6 as a front e
 
 #Use Case Details:
 
-Create an employee with the below details and display all the employees in a table.
+Create an employee with the below details and display all the employees in a table.Employees can be deleted.
 Register an employee with following details:
 First Name
 Last Name
@@ -14,7 +14,6 @@ Gender
 Date of Birth
 Department
 
-Employees can be deleted.
 --------------------------------------------------------------------------------------------------------------------------------
 
 #Technology/ Framework used:
